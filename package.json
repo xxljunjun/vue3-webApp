@@ -1,0 +1,28 @@
+{
+  "name": "xxlvit",
+  "version": "0.0.0",
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "vue": "^3.2.23",
+    "vue-router": "^4.0.12",
+    "vuex": "^4.0.0-0"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/compiler-sfc": "^3.0.4",
+    "babel-plugin-component": "^1.1.1",
+    "sass": "^1.27.0",
+    "sass-loader": "^10.0.4",
+    "scss": "^0.2.4",
+    "scss-loader": "^0.0.1",
+    "style-loader": "^3.3.1",
+    "style-resources-loader": "^1.4.1",
+    "vite": "^1.0.0-rc.13",
+    "vue-cli-plugin-style-resources-loader": "~0.1.5"
+  }
+}
