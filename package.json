@@ -1,28 +1,25 @@
 {
-  "name": "xxlvit",
+  "name": "vite-webapp",
+  "private": true,
   "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "build": "vite build",
     "dev": "vite",
-    "start": "npm run dev"
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "vue": "^3.2.23",
-    "vue-router": "^4.0.12",
-    "vuex": "^4.0.0-0"
+    "vue": "^3.2.37",
+    "vue-router": "^4.0.13"
   },
   "devDependencies": {
-    "@vue/cli-plugin-router": "~4.5.0",
-    "@vue/cli-plugin-vuex": "~4.5.0",
-    "@vue/compiler-sfc": "^3.0.4",
-    "babel-plugin-component": "^1.1.1",
-    "sass": "^1.27.0",
-    "sass-loader": "^10.0.4",
-    "scss": "^0.2.4",
-    "scss-loader": "^0.0.1",
-    "style-loader": "^3.3.1",
-    "style-resources-loader": "^1.4.1",
-    "vite": "^1.0.0-rc.13",
-    "vue-cli-plugin-style-resources-loader": "~0.1.5"
+    "@types/node": "^18.7.14",
+    "@vitejs/plugin-vue": "^3.0.3",
+    "sass": "^1.54.7",
+    "sass-loader": "^13.0.2",
+    "style-resources-loader": "^1.5.0",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.7",
+    "vue-tsc": "^0.39.5"
   }
 }
