@@ -1,4 +1,11 @@
 #### 创建项目npm init vite@latest
+```js
+//该vite项目需要node版本大于16
+nvm ls 查看所有已经安装的版本
+nvm list available 查看网络上可以安装的版本
+nvm install 16.17.0
+nvm use 16.17.0
+```
 + 初始项目版本
 ```
 "dependencies": {
@@ -63,5 +70,16 @@ const router = createRouter({
 });
 
 export default router;
+
+```
+
+#### 安装vantUI组件库
+```js
+
+npm install vant -S
+
+//按需引入
+npm i unplugin-vue-components -D
+//需要配置vite.config
 
 ```
