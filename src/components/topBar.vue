@@ -40,6 +40,7 @@ width: 100%;
 height: 50px;
 background: #fff;
 border-bottom: 1px solid #eee;
+z-index: 2100;
 .flexBox {
   display: flex;
   align-items: center;

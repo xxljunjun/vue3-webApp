@@ -1,7 +1,7 @@
 <template>
   <div class="tabBar">
     <div class="ulbox">
-      <router-link  to="/" v-slot="{ route }">
+      <router-link  to="/home/find" v-slot="{ route }">
         <Badge>
           <span class="item">首页</span>
         </Badge>
