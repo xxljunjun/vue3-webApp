@@ -68,17 +68,17 @@ const pressEnd = ()=>{
     }
     .wrap{
       height: 35px;
-      width: 35px;
+      width: 45px;
       display: flex;
       align-items: center;
       justify-content: center;
       .redBox {
       height: 30px;
-      width: 30px;
+      width: 40px;
       background: red;
       font-size: 30px;
       color: #fff;
-      border-radius: 5px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -87,7 +87,7 @@ const pressEnd = ()=>{
     
     .ispress{
       height: 35px !important;
-      width: 35px !important;
+      width: 45px !important;
     }
   }
   //路由激活时添加的css属性
