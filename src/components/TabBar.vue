@@ -10,7 +10,9 @@
         <span class="item">视频</span>
         <Badge></Badge>
       </router-link>
-      <div class="redBox">+</div>
+      <div class="wrap">
+        <div class="redBox" @touchstart="pressStart" @touchend="pressEnd" :class="[{ispress:ispress}]">+</div>
+      </div>
       <router-link to="/message" v-slot="{ route }">
         <Badge :count="6">
           <span class="item">消息</span>
@@ -26,8 +28,23 @@
 </template>
 
 <script lang="ts" setup>
+  /*
+  touchstart:  // 手指放到屏幕上的时候触发
+touchmove:  // 手指在屏幕上移动的时候触发
+touchend:  // 手指从屏幕上拿起的时候触发
+touchcancel:  // 系统取消touch事件的时候触发。至于系统什么时候会取消，不详
+  */
 import Badge from "@/components/badge/";
-import { reactive } from "vue";
+import { reactive,ref } from "vue";
+let ispress = ref(false)
+const pressStart = ()=>{
+  console.log("1111")
+  ispress.value = true
+}
+const pressEnd = ()=>{
+  console.log("222")
+  ispress.value = false
+}
 </script>
 <style scoped lang="scss">
 .tabBar {
@@ -49,9 +66,15 @@ import { reactive } from "vue";
       display: inline-block;
       width: 36px;
     }
-    .redBox {
+    .wrap{
       height: 35px;
       width: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .redBox {
+      height: 30px;
+      width: 30px;
       background: red;
       font-size: 30px;
       color: #fff;
@@ -59,6 +82,12 @@ import { reactive } from "vue";
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    }
+    
+    .ispress{
+      height: 35px !important;
+      width: 35px !important;
     }
   }
   //路由激活时添加的css属性
