@@ -3,7 +3,7 @@ import { createRouter, createWebHashHistory } from "vue-router";
 const routes = [
     {
         path: "/",
-        replace:'/home',
+        redirect:'/home/find',
         name: "home",
         component: () => import("@/views/home/index.vue"),
         meta:{isTab:true},
@@ -48,8 +48,8 @@ const routes = [
         children:[
             {
                 path: "/search/searchDeatal",
-                name: "care",
-                component: () => import("@/views/home/search/searchDeatal.vue"),
+                name: "searchDeatal",
+                component: () => import("@/views/home/search/searchDeatal/searchDeatal.vue"),
             },  
         ]
     },

@@ -1,6 +1,6 @@
 <template>
   <div class="search">
-    <TopSearch :placeholder='changeArr[0]?.txt' @changeshowPag="changeshowPag"/>
+    <TopSearch :showPag="showPag" :placeholder='changeArr[0]?.txt' @changeshowPag="changeshowPag"/>
     <!-- 搜索页面 -->
     <div class="content" v-if="showPag == 1">
       <div class="title" v-if="historyArr.length > 0">
@@ -29,7 +29,10 @@
     <div v-if="showPag == 2" class="lenovo">
       <Lenovo/>
     </div>
-    <router-view></router-view>
+    <div v-if="showPag == 3" class="lenovo">
+      <router-view></router-view>
+    </div>
+    
   </div>
 </template>
 <script setup lang="ts">

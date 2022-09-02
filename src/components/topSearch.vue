@@ -13,7 +13,7 @@
         @update:model-value="txtChange"
       />
     </div>
-    <div class="right" @click="goToSearch">搜索</div>
+    <div class="right" @click="goToSearch" v-if="showPag ==1 || showPag ==2 ">搜索</div>
   </div>
 </template>
 <script setup lang="ts">
@@ -21,6 +21,7 @@ import { ref, watch } from "vue";
 import { useRouter } from "vue-router";
 
 let value = ref("");
+let showBtn = ref(true)
 
 //监听
 // watch(value,(newVal)=>{
@@ -32,6 +33,9 @@ const props = defineProps({
     type: String,
     default: "",
   },
+  showPag:{
+    type:Number
+  }
 });
 //emit的写法
 const emit = defineEmits(["changeshowPag"]);
