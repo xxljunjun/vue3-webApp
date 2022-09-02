@@ -106,4 +106,7 @@ const pressEnd = ()=>{
   }
   
 }
+:deep(.van-badge__wrapper){
+  font-size: 18px;
+}
 </style>

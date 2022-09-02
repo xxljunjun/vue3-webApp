@@ -62,6 +62,9 @@ let searchArr = reactive([
   { id: 14, txt: "情感", isChoose: false },
 ]);
 const loading = ref(false);
+/*
+@function:下拉刷新
+*/
 const onRefresh = () => {
   setTimeout(() => {
     loading.value = false;
@@ -80,9 +83,7 @@ const clickTxt = (id) => {
   });
   nextTick(()=>{
     let element = document.querySelector('.isChoose')
-    console.log(element)
-    element.scrollIntoView(false)
-    // element.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
+    element.scrollIntoView({behavior: "smooth", block: "nearest", inline: "center"})
   })
  
 };
@@ -133,6 +134,7 @@ const clickTxt = (id) => {
       display: flex;
       align-items: center;
       justify-content: center;
+      font-size: 18px;
     }
   }
   .article_box {

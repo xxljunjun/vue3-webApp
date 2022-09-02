@@ -83,3 +83,26 @@ npm i unplugin-vue-components -D
 //需要配置vite.config
 
 ```
+
+#### 移动端适配
+```js
+npm install postcss-pxtorem --save-dev
+npm install amfe-flexible --save-dev
+//main.ts
+import 'amfe-flexible'
+//vite.config.js中配置postcss-pxtorem
+export default defineConfig({
+  ...
+  css: {
+    postcss: {
+      plugins: [
+        postCssPxToRem({
+          rootValue: 37.5, // 1rem的大小
+          propList: ['*'], // 需要转换的属性，这里选择全部都进行转换
+        })
+      ]
+    }
+  },
+...
+})
+```

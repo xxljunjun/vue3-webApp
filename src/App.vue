@@ -9,4 +9,5 @@
   <router-view></router-view>
   <TabBar v-if="route.meta?.isTab"/>
 </template>
-<style lang="scss"></style>
+<style lang="scss">
+</style>

@@ -1,4 +1,10 @@
 <script setup lang="ts"></script>
 
-<template>111111111</template>
-<style scoped lang="scss"></style>
+<template>
+    <div class="mine">342345234</div>
+</template>
+<style scoped lang="scss">
+    .mine{
+        font-size: 18px;
+    }
+</style>
