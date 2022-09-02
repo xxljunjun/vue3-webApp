@@ -29,17 +29,14 @@
     <div v-if="showPag == 2" class="lenovo">
       <Lenovo/>
     </div>
-    <!-- 搜素页面 -->
-    <div v-if="showPag == 3" class="result">
-      <Result/>
-    </div>
+    <router-view></router-view>
   </div>
 </template>
 <script setup lang="ts">
 import { reactive, toRefs, ref, markRaw,watch } from "vue";
+import { useRouter } from "vue-router";
 import TopSearch from "@/components/topSearch.vue";
 import Lenovo from '@/components/home/lenovo.vue'
-import Result from "@/components/home/result.vue"
 
 let showPag = ref(1)
 let historyArr = reactive([
@@ -59,6 +56,18 @@ let changeArr = reactive([
   { id: 5, txt: "小溪流5" },
   { id: 6, txt: "小溪流6" },
 ]);
+
+//路由跳转
+const router = useRouter();
+//监听
+watch(()=>router.currentRoute.value.path,(toPath)=>{
+  if(toPath == '/search/searchDeatal'){
+    showPag.value = 3
+  }
+  if(toPath == '/search'){
+    showPag.value = 1
+  }
+})
 
 /*
     @function:清空历史数据

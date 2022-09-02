@@ -42,6 +42,7 @@ const router = useRouter();
     @function:返回上一级菜单
   */
 const back = () => {
+  value.value = ''
   router.back();
 };
 /*
@@ -52,6 +53,7 @@ const goToSearch = () => {
     value.value = props.placeholder;
   }
   emit("changeshowPag", 3);
+  router.push({path:'/search/searchDeatal'})
 };
 /*
     @function:点击清空按钮
@@ -59,6 +61,7 @@ const goToSearch = () => {
 const clearTxt = () => {
   console.log("点击清空按钮");
   emit("changeshowPag", 1);
+  router.push({path:'/search'})
 };
 /*
     @function:输入框文字改变
@@ -67,8 +70,10 @@ const txtChange = () => {
   console.log("输入框文字改变");
   if (value.value == "") {
     emit("changeshowPag", 1);
+    router.push({path:'/search'})
   } else {
     emit("changeshowPag", 2);
+    router.push({path:'/search'})
   }
 };
 </script>

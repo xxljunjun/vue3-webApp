@@ -44,7 +44,14 @@ const routes = [
     {
         path: "/search",
         name: "search",
-        component: () => import("@/views/home/search/index.vue")
+        component: () => import("@/views/home/search/index.vue"),
+        children:[
+            {
+                path: "/search/searchDeatal",
+                name: "care",
+                component: () => import("@/views/home/search/searchDeatal.vue"),
+            },  
+        ]
     },
 ]
 
