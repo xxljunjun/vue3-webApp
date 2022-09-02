@@ -8,34 +8,50 @@
         v-model="value"
         :clearable="true"
         :placeholder="placeholder"
-        class="vantInp"
+        :class="[
+          'vantInp',
+          widthStatus == 2?'activeLength':'',
+          showPag == 3?'noactiveLength':'',
+          { hasSearch: showPag == 3},
+        ]"
         @clear="clearTxt"
         @update:model-value="txtChange"
       />
     </div>
-    <div class="right" @click="goToSearch" v-if="showPag ==1 || showPag ==2 ">搜索</div>
+    <div class="right" @click="goToSearch" v-if="showPag == 1 || showPag == 2">
+      搜索
+    </div>
+    <div class="boxStatus" v-if="widthStatus == 2 && showPag == 3">
+      <van-icon name="apps-o" class="icon"/>
+    </div>
   </div>
 </template>
 <script setup lang="ts">
-import { ref, watch } from "vue";
+import { ref, watch, inject } from "vue";
 import { useRouter } from "vue-router";
+import emitter from "@/utils/bus";
+
+const $bus = inject("$bus");
 
 let value = ref("");
-let showBtn = ref(true)
+let showBtn = ref(true);
+let widthStatus = ref(0);
 
-//监听
-// watch(value,(newVal)=>{
-//   console.log(newVal)
-// })
+emitter.on("tabChange", (val) => {
+  //事件总线触发
+  console.log(">>>", val);
+  widthStatus.value = val;
+  
+});
 //非ts专有声明
 const props = defineProps({
   placeholder: {
     type: String,
     default: "",
   },
-  showPag:{
-    type:Number
-  }
+  showPag: {
+    type: Number,
+  },
 });
 //emit的写法
 const emit = defineEmits(["changeshowPag"]);
@@ -46,7 +62,7 @@ const router = useRouter();
     @function:返回上一级菜单
   */
 const back = () => {
-  value.value = ''
+  value.value = "";
   router.back();
 };
 /*
@@ -57,7 +73,7 @@ const goToSearch = () => {
     value.value = props.placeholder;
   }
   emit("changeshowPag", 3);
-  router.push({path:'/search/searchDeatal'})
+  router.push({ path: "/search/searchDeatal" });
 };
 /*
     @function:点击清空按钮
@@ -65,7 +81,7 @@ const goToSearch = () => {
 const clearTxt = () => {
   console.log("点击清空按钮");
   emit("changeshowPag", 1);
-  router.push({path:'/search'})
+  router.push({ path: "/search" });
 };
 /*
     @function:输入框文字改变
@@ -74,10 +90,10 @@ const txtChange = () => {
   console.log("输入框文字改变");
   if (value.value == "") {
     emit("changeshowPag", 1);
-    router.push({path:'/search'})
+    router.push({ path: "/search" });
   } else {
     emit("changeshowPag", 2);
-    router.push({path:'/search'})
+    router.push({ path: "/search" });
   }
 };
 </script>
@@ -88,7 +104,7 @@ const txtChange = () => {
   //   background:red;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  // justify-content: space-between;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
@@ -102,13 +118,24 @@ const txtChange = () => {
     font-size: 16px;
     .vantInp {
       // height: 20px;
-      width: 240px;
-      margin: 0 20px;
+      width: 260px;
+      margin: 0 20px 0 10px;
       border-radius: 10px;
       :deep(.van-search__content) {
         border-radius: 15px;
         height: 30px;
       }
+    }
+    .hasSearch {
+      width: 300px;
+      
+    }
+    .activeLength {
+      width: 260px;
+      transition: width linear 0.3s;
+    }
+    .noactiveLength{
+      transition: width linear 0.3s;
     }
     :deep(.van-search) {
       padding: 0;
@@ -119,6 +146,12 @@ const txtChange = () => {
     width: 60px;
     margin-right: 10px;
     color: rgb(105, 105, 105);
+  }
+  .boxStatus {
+    .icon{
+       font-size: 24px;
+       color: rgb(148, 148, 148);
+    }
   }
 }
 </style>

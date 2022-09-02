@@ -15,7 +15,16 @@
 </template>
 <script setup lang="ts">
 import { ref, watch } from "vue";
+import emitter from "@/utils/bus"
 let active = ref(0);
+
+
+
+//监听
+watch(active,(newVal)=>{
+  console.log('tab标签切换了',newVal)
+  emitter.emit('tabChange',newVal)
+})
 
 const onClickTab = (val) => {
   console.log(val);

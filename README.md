@@ -106,3 +106,15 @@ export default defineConfig({
 ...
 })
 ```
+
+#### vue3的事件总线通信
+```js
+npm install --save mitt
+//bus.js
+import mitt from "mitt";
+const emitter = mitt()
+export default emitter
+//使用
+emitter.emit()
+emitter.on()
+```

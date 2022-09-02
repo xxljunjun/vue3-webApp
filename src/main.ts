@@ -1,3 +1,4 @@
+
 import { createApp } from 'vue'
 import '@/styles/index.scss'
 import App from './App.vue'
@@ -7,6 +8,7 @@ import router from './router'
 import 'amfe-flexible'
 //创建应用实例对象
 const app = createApp(App)
+
 
 app.use(router).mount('#app')
 

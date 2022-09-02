@@ -29,7 +29,7 @@
     <div v-if="showPag == 2" class="lenovo">
       <Lenovo/>
     </div>
-    <div v-if="showPag == 3" class="lenovo">
+    <div v-if="showPag == 3">
       <router-view></router-view>
     </div>
     
