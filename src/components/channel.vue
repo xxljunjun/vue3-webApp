@@ -24,9 +24,7 @@
 
 <script setup lang="ts">
 import { reactive, toRefs, ref, markRaw } from "vue";
-//emit的写法
-const emit = defineEmits(['on-close'])
-//watch
+
 let isEdit = ref(false)
 let myChannel = reactive([
   { id: 1, txt: "推荐" },
@@ -60,6 +58,10 @@ let recommendMyChannel = reactive([
   { id: 27, txt: "好物" },
   { id: 28, txt: "情感" },
 ]);
+
+//emit的写法
+const emit = defineEmits(['on-close'])
+
 /*
   @function:点击箭头触发
 */

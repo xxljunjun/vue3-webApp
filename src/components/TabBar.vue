@@ -65,6 +65,7 @@ const pressEnd = ()=>{
       font-size: 14px;
       display: inline-block;
       width: 36px;
+      height: 36px;
     }
     .wrap{
       height: 35px;
@@ -96,6 +97,7 @@ const pressEnd = ()=>{
     .item{
       color: #000;
       font-size: 16px;
+      
     }
   }
   .router-link-exact-active {
