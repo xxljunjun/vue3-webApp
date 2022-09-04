@@ -7,21 +7,25 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    All: typeof import('./src/components/search/all.vue')['default']
     Badge: typeof import('./src/components/badge/badge.vue')['default']
     Channel: typeof import('./src/components/channel.vue')['default']
     DetailBox: typeof import('./src/components/detailBox.vue')['default']
     Lenovo: typeof import('./src/components/home/lenovo.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Shop: typeof import('./src/components/search/shop.vue')['default']
     TabBar: typeof import('./src/components/TabBar.vue')['default']
     TopBar: typeof import('./src/components/topBar.vue')['default']
     TopSearch: typeof import('./src/components/topSearch.vue')['default']
+    User: typeof import('./src/components/search/user.vue')['default']
     VanBadge: typeof import('vant/es')['Badge']
     VanIcon: typeof import('vant/es')['Icon']
     VanLoading: typeof import('vant/es')['Loading']
     VanPopup: typeof import('vant/es')['Popup']
     VanPullRefresh: typeof import('vant/es')['PullRefresh']
     VanSearch: typeof import('vant/es')['Search']
+    VanSticky: typeof import('vant/es')['Sticky']
     VanTab: typeof import('vant/es')['Tab']
     VanTabs: typeof import('vant/es')['Tabs']
   }
