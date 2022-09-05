@@ -27,7 +27,7 @@
   </div>
 </template>
 <script setup lang="ts">
-import CardBox from "@/views/home/care/card-box.vue";
+import CardBox from "@/components/home/care/card-box.vue";
 import { ref, reactive } from "vue";
 const txtArr = reactive([
   { id: 1, txt: "拍照地" },

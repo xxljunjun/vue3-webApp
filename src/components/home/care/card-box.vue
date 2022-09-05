@@ -23,15 +23,15 @@
       <div>
         <span>
           <van-icon name="like-o" />
-          <span style="marginleft: 5px">点赞</span>
+          <span class="txt">点赞</span>
         </span>
-        <span style="marginleft: 5px">
+        <span class="txt">
           <van-icon name="star-o" />
-          <span style="marginleft: 5px">收藏</span>
+          <span class="txt">收藏</span>
         </span>
-        <span style="marginleft: 5px">
+        <span class="txt">
           <van-icon name="more-o" />
-          <span style="marginleft: 5px">评论</span>
+          <span class="txt">评论</span>
         </span>
       </div>
     </div>
@@ -94,6 +94,9 @@
     box-sizing: border-box;
     margin: 10px 0;
     font-size: 14px;
+    .txt{
+      margin-left: 5px;
+    }
   }
   .last_txt {
     font-size: 14px;

@@ -1,7 +1,7 @@
 <template>
   <div class="topBar">
     <div class="flexBox">
-      <div class="left">
+      <div class="left"  @click="goToPage">
         <van-icon name="after-sale" />
       </div>
       <div class="middle">
@@ -45,6 +45,13 @@ const onClickTab = ({ title }) => {
 const goToSearch = () => {
   router.push({ path: "/search" });
 };
+ /***
+ * @function:跳转日常页面
+ */
+ const goToPage = ()=>{
+  console.log("1111")
+  router.push({ path: "/daily"});
+}
 </script>
 <style lang="scss">
 .topBar {

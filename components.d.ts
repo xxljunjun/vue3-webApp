@@ -10,6 +10,7 @@ declare module '@vue/runtime-core' {
     All: typeof import('./src/components/search/all.vue')['default']
     Badge: typeof import('./src/components/badge/badge.vue')['default']
     Card: typeof import('./src/components/home/care/card.vue')['default']
+    CardBox: typeof import('./src/components/home/care/card-box.vue')['default']
     Channel: typeof import('./src/components/channel.vue')['default']
     DetailBox: typeof import('./src/components/detailBox.vue')['default']
     Lenovo: typeof import('./src/components/home/lenovo.vue')['default']

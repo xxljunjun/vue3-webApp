@@ -53,6 +53,11 @@ const routes = [
             },  
         ]
     },
+    {
+        path: "/daily",
+        name: "daily",
+        component: () => import("@/views/home/daily/index.vue"),
+    },
 ]
 
 const router = createRouter({
