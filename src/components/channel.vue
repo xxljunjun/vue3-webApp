@@ -62,20 +62,20 @@ let recommendMyChannel = reactive([
 //emit的写法
 const emit = defineEmits(['on-close'])
 
-/*
+/****
   @function:点击箭头触发
 */
 const close = ()=>{
   isEdit.value = false
   emit('on-close')
 }
-/*
+/****
   @function:改变编辑状态
 */
 const changeEditStatus = ()=>{
   isEdit.value = !isEdit.value
 }
-/*
+/****
   @function:减少我的频道
 */
 const reduceChannel = (item)=>{
@@ -89,7 +89,7 @@ const reduceChannel = (item)=>{
   recommendMyChannel.push(item)
   
 }
-/*
+/****
   @function:增加我的频道
 */
 const addChannel = (item)=>{
@@ -102,7 +102,7 @@ const addChannel = (item)=>{
   //对我的频道新增
   myChannel.push(item)
 }
-/*
+/****
   @function:选择某个频道
 */
 const chooseChannel = (item)=>{

@@ -44,9 +44,16 @@ touchcancel:  // 系统取消touch事件的时候触发。至于系统什么时�
 import Badge from "@/components/badge/";
 import { reactive, ref } from "vue";
 let ispress = ref(false);
+
+/****
+  @function:按下
+*/
 const pressStart = () => {
   ispress.value = true;
 };
+/****
+  @function:松开
+*/
 const pressEnd = () => {
   ispress.value = false;
 };

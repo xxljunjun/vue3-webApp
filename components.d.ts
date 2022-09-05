@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     All: typeof import('./src/components/search/all.vue')['default']
     Badge: typeof import('./src/components/badge/badge.vue')['default']
+    Card: typeof import('./src/components/home/care/card.vue')['default']
     Channel: typeof import('./src/components/channel.vue')['default']
     DetailBox: typeof import('./src/components/detailBox.vue')['default']
     Lenovo: typeof import('./src/components/home/lenovo.vue')['default']
@@ -26,6 +27,8 @@ declare module '@vue/runtime-core' {
     VanPullRefresh: typeof import('vant/es')['PullRefresh']
     VanSearch: typeof import('vant/es')['Search']
     VanSticky: typeof import('vant/es')['Sticky']
+    VanSwipe: typeof import('vant/es')['Swipe']
+    VanSwipeItem: typeof import('vant/es')['SwipeItem']
     VanTab: typeof import('vant/es')['Tab']
     VanTabs: typeof import('vant/es')['Tabs']
   }

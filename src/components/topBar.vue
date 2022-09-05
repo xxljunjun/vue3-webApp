@@ -33,13 +33,13 @@ const active = ref(1);
 const router = useRouter();
 const route = useRoute();
 
-/*
+/****
 @function:点击tab切换
 */
 const onClickTab = ({ title }) => {
   console.log(title);
 };
-/*
+/****
 @function:点击搜索icon
 */
 const goToSearch = () => {

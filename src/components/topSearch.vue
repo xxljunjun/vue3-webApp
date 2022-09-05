@@ -94,10 +94,8 @@ const txtChange = () => {
 .search {
   height: 50px;
   width: 100%;
-  //   background:red;
   display: flex;
   align-items: center;
-  // justify-content: space-between;
   border-bottom: 1px solid #eee;
   position: sticky;
   top: 0;
@@ -110,7 +108,6 @@ const txtChange = () => {
   .middle {
     font-size: 16px;
     .vantInp {
-      // height: 20px;
       width: 260px;
       margin: 0 20px 0 10px;
       border-radius: 10px;
