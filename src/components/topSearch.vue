@@ -8,11 +8,12 @@
         v-model="value"
         :clearable="true"
         :placeholder="placeholder"
+        :autofocus="focusStatus"
         :class="[
           'vantInp',
-          widthStatus == 2?'activeLength':'',
-          showPag == 3?'noactiveLength':'',
-          { hasSearch: showPag == 3},
+          widthStatus == 2 ? 'activeLength' : '',
+          showPag == 3 ? 'noactiveLength' : '',
+          { hasSearch: showPag == 3 },
         ]"
         @clear="clearTxt"
         @update:model-value="txtChange"
@@ -22,27 +23,19 @@
       搜索
     </div>
     <div class="boxStatus" v-if="widthStatus == 2 && showPag == 3">
-      <van-icon name="apps-o" class="icon"/>
+      <van-icon name="apps-o" class="icon" />
     </div>
   </div>
 </template>
 <script setup lang="ts">
-import { ref, watch, inject } from "vue";
+import { ref, watch, inject, toRef, nextTick, onMounted } from "vue";
 import { useRouter } from "vue-router";
-import emitter from "@/utils/bus";
-
-const $bus = inject("$bus");
 
 let value = ref("");
 let showBtn = ref(true);
 let widthStatus = ref(0);
+let focusStatus = ref(true);
 
-emitter.on("tabChange", (val) => {
-  //事件总线触发
-  console.log(">>>", val);
-  widthStatus.value = val;
-  
-});
 //非ts专有声明
 const props = defineProps({
   placeholder: {
@@ -58,16 +51,16 @@ const emit = defineEmits(["changeshowPag"]);
 //路由跳转
 const router = useRouter();
 
-/*
-    @function:返回上一级菜单
-  */
+/***
+ * @function:返回上一级菜单
+ */
 const back = () => {
   value.value = "";
   router.back();
 };
-/*
-    @function:点击搜索按钮
-  */
+/***
+ * @function:点击搜索按钮
+ */
 const goToSearch = () => {
   if (value.value == "") {
     value.value = props.placeholder;
@@ -75,17 +68,17 @@ const goToSearch = () => {
   emit("changeshowPag", 3);
   router.push({ path: "/search/searchDeatal" });
 };
-/*
-    @function:点击清空按钮
-  */
+/***
+ * @function:点击清空按钮
+ */
 const clearTxt = () => {
   console.log("点击清空按钮");
   emit("changeshowPag", 1);
   router.push({ path: "/search" });
 };
-/*
-    @function:输入框文字改变
-  */
+ /***
+ * @function:输入框文字改变
+ */
 const txtChange = () => {
   console.log("输入框文字改变");
   if (value.value == "") {
@@ -128,13 +121,12 @@ const txtChange = () => {
     }
     .hasSearch {
       width: 300px;
-      
     }
     .activeLength {
       width: 260px;
       transition: width linear 0.3s;
     }
-    .noactiveLength{
+    .noactiveLength {
       transition: width linear 0.3s;
     }
     :deep(.van-search) {
@@ -148,9 +140,9 @@ const txtChange = () => {
     color: rgb(105, 105, 105);
   }
   .boxStatus {
-    .icon{
-       font-size: 24px;
-       color: rgb(148, 148, 148);
+    .icon {
+      font-size: 24px;
+      color: rgb(148, 148, 148);
     }
   }
 }

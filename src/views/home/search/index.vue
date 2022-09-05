@@ -41,6 +41,7 @@ import { useRouter } from "vue-router";
 import TopSearch from "@/components/topSearch.vue";
 import Lenovo from '@/components/home/lenovo.vue'
 
+
 let showPag = ref(1)
 let historyArr = reactive([
   { id: 1, txt: "小溪流1" },
